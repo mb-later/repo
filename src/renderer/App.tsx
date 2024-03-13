@@ -63,7 +63,7 @@ function Hello() {
         </div> */}
         <div className="server-info-menu">
           <h1>WASTELAND</h1>
-          <p>Server version V1.0</p>
+          <p>Server version V1.1</p>
           <div className="server-desc">
             <img src={logoserver} alt="" />
             <p>
@@ -107,7 +107,7 @@ function Hello() {
       <div className="right-menu">
         <div className="row-right">
           <h1 className="welcome-text">
-            WELCOME TO <span>WASTELAND ROLEPLAY</span>
+            WELCOME TO <span>WASTELAND ROLEPLAY </span>
           </h1>
           <div className="server-information-panel">
             <div className="server-info" id="onlineplayers">
