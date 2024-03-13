@@ -190,16 +190,6 @@ const createWindow = async () => {
   new AppUpdater();
 };
 
-app.on('ready', () => {
-  console.log("ready")
-  autoUpdater.setFeedURL({
-      provider: 'github',
-      repo: 'repo',
-      owner: 'mb-later',
-      token: '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'
-  });
-  autoUpdater.checkForUpdatesAndNotify();
-});
 
 autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
   const dialogOpts = {
