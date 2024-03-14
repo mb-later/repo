@@ -23,8 +23,8 @@ export const eventData = [
 
 export const patchNotes = [
   {
-    updateName: "Test Update",
-    updateDesc: "Test description"
+    updateName: "Inventory Update ",
+    updateDesc: `Fixed inventory errors, and \n slot bugs and minor bugs.`,
   },
   {
     updateName: "Test Update",

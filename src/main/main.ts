@@ -205,10 +205,25 @@ autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
   })
 })
 
-autoUpdater.on('error', (message) => {
-  console.error('There was a problem updating the application')
-  console.error(message);
-})
+// autoUpdater.on("update-available", (info) => {
+//   curWindow.showMessage(`Update available. Current version ${app.getVersion()}`);
+//   let pth = autoUpdater.downloadUpdate();
+//   curWindow.showMessage(pth);
+// });
+
+// autoUpdater.on("update-not-available", (info) => {
+//   curWindow.showMessage(`No update available. Current version ${app.getVersion()}`);
+// });
+
+// /*Download Completion Message*/
+// autoUpdater.on("update-downloaded", (info) => {
+//   curWindow.showMessage(`Update downloaded. Current version ${app.getVersion()}`);
+// });
+
+// autoUpdater.on("error", (info) => {
+//   curWindow.showMessage(info);
+// });
+
 /**
  * Add event listeners...
  */
@@ -224,6 +239,18 @@ app.on('window-all-closed', () => {
 app
   .whenReady()
   .then(() => {
+    autoUpdater.checkForUpdates();
+    const newD = {
+      type: 'info',
+      buttons: ['Restart', 'Later'],
+      title: `${app.getVersion()}`,
+      message: "test",
+      detail:
+        'A new version has been downloaded. Restart the application to apply the updates.'
+    };
+    dialog.showMessageBox(newD).then((returnValue) => {
+      if (returnValue.response === 0) autoUpdater.quitAndInstall()
+    })
     createWindow();
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the

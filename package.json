@@ -1,5 +1,6 @@
 {
-
+  "name": "redm-launcher",
+  "version": "1.0.0",
   "description": "A foundation for scalable desktop apps",
   "keywords": [
     "electron",
@@ -235,12 +236,12 @@
     },
     "extraResources": [
       "./assets/**"
-    ],
-    "publish": {
-      "provider": "github",
-      "owner": "mb-later",
-      "repo": "repo"
-    }
+    ]
+  },
+  "repository": "https://github.com/mb-later/repo",
+  "publish": {
+    "provider": "github",
+    "releaseType": "release"
   },
   "collective": {
     "url": "https://opencollective.com/electron-react-boilerplate-594"
